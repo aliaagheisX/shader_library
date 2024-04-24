@@ -11,7 +11,13 @@ float plot(vec2 st, float pct){
 void main() {
     vec2 st = gl_FragCoord.xy / iResolution.xy;
     
-    float y = clamp(st.x, 0.5, 0.8);
+    // TODO: change your function
+    // float y = distance(vec2(0.8, 0.4), st);
+//     float y =   ( smoothstep(.1, .1+0.02, length(st - .5))- 
+//             step(0.12, length(st - .5))
+//             );
+
+    float y = (sin(st.x * 2.0f * PI ) + 1.0) / 2.0;
 
     vec3 color = vec3(y);
 
